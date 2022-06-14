@@ -1,24 +1,17 @@
 
 const DEFAULTSIZE = 16;
 
-
 let sketchGrid = document.querySelector(".sketch__grid");
-
-
+let gridSize = document.querySelector("#gridSize");
 
 let mousedown = false;
 document.body.onmousedown = ()=> (mousedown = true);
 document.body.onmouseup = ()=> (mousedown = false);
 
-
-
-
-
-createGrid(DEFAULTSIZE);
-
-function createGrid(DEFAULTSIZE) {
-    sketchGrid.setAttribute("style", `grid-template-columns: repeat(${DEFAULTSIZE}, 1fr); grid-template-rows: repeat(${DEFAULTSIZE}, 1fr);`);
-    for (let i = 0; i < DEFAULTSIZE*DEFAULTSIZE; i++){
+function createGrid(size) {
+    sketchGrid.textContent = "";
+    sketchGrid.setAttribute("style", `grid-template-columns: repeat(${size}, 1fr); grid-template-rows: repeat(${size}, 1fr);`);
+    for (let i = 0; i < size*size; i++){
         let panel = document.createElement("div");
         panel.classList.add("panels");
         panel.addEventListener("mouseover", color);
@@ -38,4 +31,9 @@ function color(e){
     }
 }
 
+createGrid(DEFAULTSIZE);
 
+gridSize.onchange = (e) => {
+    gridSize.labels[0].textContent = `Grid Size: ${e.target.value} x ${e.target.value}`;
+    createGrid(e.target.value);
+};
