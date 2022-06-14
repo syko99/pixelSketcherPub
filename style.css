@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+main{
+    display: grid;
+    place-items: center;
+}
+.sketch__grid{
+    display: grid;
+    gap: 1px;
+    place-items: center;
+}
+.panels{
+    border: 1px solid black;
+    background-color: white;
+}
+.new__grid-wrapper{
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
