@@ -22,23 +22,14 @@ header h1{
     height: 600px;
     background-color: rgb(126, 125, 129);
 }
-.sketch__grid-wrapper{
-    display: grid;
-    place-items: center;
-}
 .sketch__grid{
     display: grid;
-    place-items: center;
     background-color: white;
     width: 600px;
     height: 600px;
 }
 .panels{
-    border: 1px solid rgba(139, 139, 139, 0.192);
+    border: 1px solid rgba(0, 0, 0, 0.192);
     background-color: transparent;
-}
-#newGridBtn{
-    display: flex;
-    justify-content: center;
-    margin: 1rem 0;
+    user-select: none;
 }
