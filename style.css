@@ -1,6 +1,26 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: rgb(61, 60, 66);
+    width: 100%;
+    height: 100%;
+}
+header h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3rem;
+    font-weight: 800;
+    color: lightgray;
+    text-align: center;
+}
+.main__wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+}
+.options{
+    width: 50%;
+    height: 600px;
+    background-color: rgb(126, 125, 129);
 }
 .sketch__grid-wrapper{
     display: grid;
@@ -8,14 +28,16 @@ body{
 }
 .sketch__grid{
     display: grid;
-    gap: 1px;
     place-items: center;
+    background-color: white;
+    width: 600px;
+    height: 600px;
 }
 .panels{
-    border: 1px solid black;
-    background-color: white;
+    border: 1px solid rgba(139, 139, 139, 0.192);
+    background-color: transparent;
 }
-.new__grid-wrapper{
+#newGridBtn{
     display: flex;
     justify-content: center;
     margin: 1rem 0;

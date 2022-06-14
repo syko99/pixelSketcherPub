@@ -1,5 +1,5 @@
 let sketchGrid = document.querySelector(".sketch__grid");
-let gridMaxWidth = 760;
+let gridMaxWidth = 600;
 
 function createGrid(pixels) {
     for (let i = 0; i < pixels; i++){
@@ -8,7 +8,7 @@ function createGrid(pixels) {
             panel.classList.add("panels");
             let widthHeight = gridMaxWidth/pixels;
             panel.setAttribute("style", `width: ${widthHeight}px; height: ${widthHeight}px;`);
-            panel.addEventListener("mousedown", ()=>{
+            panel.addEventListener("mouseover", ()=>{
                 let randomRGB = Math.floor(Math.random()*256);
                 let randomRGB2 = Math.floor(Math.random()*256);
                 let randomRGB3 = Math.floor(Math.random()*256);
