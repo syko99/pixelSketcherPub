@@ -6,6 +6,7 @@ let activeSize = DEFAULTSIZE;
 let activeColor = DEFAULTCOLOR;
 
 let colorPicker = document.querySelector("#colorPicker");
+let eraserBtn = document.querySelector("#eraserBtn");
 let clearBtn = document.querySelector("#clearBtn");
 let sketchGrid = document.querySelector(".sketch__grid");
 let gridSize = document.querySelector("#gridSize");
@@ -17,7 +18,9 @@ document.body.onmouseup = ()=> (mousedown = false);
 colorPicker.addEventListener("input", (e)=>{
     activeColor = e.target.value;
 })
-
+eraserBtn.addEventListener("click", ()=>{
+    activeColor = "transparent";
+})
 clearBtn.addEventListener("click", ()=>{
     createGrid(activeSize)
 });
