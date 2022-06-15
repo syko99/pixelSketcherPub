@@ -17,7 +17,11 @@
     <main>
         <div class="main__wrapper">
             <div class="options">
-                <label for="gridSize" id="gridSizeLabel">Grid Size: 16 x 16</label><br>
+                <span id="colorPickerWrapper">
+                    <input type="color" name="colorPicker" id="colorPicker">
+                </span>
+                <button id="clearBtn" class="options__button">Clear</button>
+                <label for="gridSize" id="gridSizeLabel">Grid Size: 16 x 16</label>
                 <input type="range" name="gridSize" id="gridSize" min="2" max="50" value="16">
             </div>
             <div class="sketch__grid"></div>

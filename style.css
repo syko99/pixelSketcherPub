@@ -4,12 +4,17 @@ body{
     background-color: rgb(61, 60, 66);
     width: 100%;
     height: 100%;
+    font-family: var(--default-font);
+    color: var(--default-color);
+}
+:root{
+    --default-font: 'Courier New', Courier, monospace;
+    --default-color: whitesmoke;
 }
 header h1{
-    font-family: 'Courier New', Courier, monospace;
     font-size: 3rem;
     font-weight: 800;
-    color: lightgray;
+    color: var(--default-color);
     text-align: center;
 }
 .main__wrapper{
@@ -20,16 +25,55 @@ header h1{
 .options{
     width: 50%;
     height: 600px;
-    background-color: rgb(126, 125, 129);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.options__button{
+    width: 10rem;
+    height: 2.5rem;
+    background-color: transparent;
+    color: var(--default-color);
+    font-size: 1.1rem;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+.options__button:hover{
+    cursor: pointer;
+    background-color: var(--default-color);
+    color: rgb(0, 0, 0);
+}
+#colorPickerWrapper{
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+    overflow: hidden;
+    display: grid;
+    place-content: center;
+}
+#colorPicker{
+    width: 8rem;
+    height: 8rem;
+    background-color: transparent;
+}
+#gridSizeLabel{
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--default-color);
+}
+#gridSize{
 }
 .sketch__grid{
     display: grid;
     background-color: white;
     width: 600px;
     height: 600px;
+    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.438);
 }
 .panels{
-    border: 1px solid rgba(0, 0, 0, 0.192);
+    border: 1px solid rgba(112, 112, 112, 0.192);
     background-color: transparent;
     user-select: none;
 }
