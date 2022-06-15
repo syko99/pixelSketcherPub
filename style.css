@@ -10,6 +10,7 @@ body{
 :root{
     --default-font: 'Courier New', Courier, monospace;
     --default-color: whitesmoke;
+    --default-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.438);
 }
 header h1{
     font-size: 3rem;
@@ -52,6 +53,7 @@ header h1{
     overflow: hidden;
     display: grid;
     place-content: center;
+    box-shadow: var(--default-shadow);
 }
 #colorPicker{
     width: 8rem;

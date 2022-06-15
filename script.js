@@ -1,6 +1,6 @@
 
 const DEFAULTSIZE = 16;
-const DEFAULTCOLOR = "black";
+const DEFAULTCOLOR = "#000000";
 
 let activeSize = DEFAULTSIZE;
 let activeColor = DEFAULTCOLOR;
@@ -14,8 +14,8 @@ let mousedown = false;
 document.body.onmousedown = ()=> (mousedown = true);
 document.body.onmouseup = ()=> (mousedown = false);
 
-colorPicker.addEventListener("input", ()=>{
-    console.log(e);
+colorPicker.addEventListener("input", (e)=>{
+    activeColor = e.target.value;
 })
 
 clearBtn.addEventListener("click", ()=>{
@@ -42,10 +42,10 @@ function createGrid(size) {
 
 function color(e){
     if (e.type === "mouseover" && mousedown){
-        e.target.style.backgroundColor = "black";
+        e.target.style.backgroundColor = activeColor;
     }
     if(e.type === "mousedown"){
-        e.target.style.backgroundColor = "black";
+        e.target.style.backgroundColor = activeColor;
     }else{
         return;
     }
