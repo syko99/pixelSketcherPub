@@ -4,8 +4,10 @@ const DEFAULTCOLOR = "#000000";
 
 let activeSize = DEFAULTSIZE;
 let activeColor = DEFAULTCOLOR;
+let selectedColor = DEFAULTCOLOR;
 
 let colorPicker = document.querySelector("#colorPicker");
+let penBtn = document.querySelector("#penBtn");
 let eraserBtn = document.querySelector("#eraserBtn");
 let clearBtn = document.querySelector("#clearBtn");
 let sketchGrid = document.querySelector(".sketch__grid");
@@ -16,11 +18,15 @@ document.body.onmousedown = ()=> (mousedown = true);
 document.body.onmouseup = ()=> (mousedown = false);
 
 colorPicker.addEventListener("input", (e)=>{
+    selectedColor = e.target.value;
     activeColor = e.target.value;
-})
+});
+penBtn.addEventListener("click", (e)=>{
+    activeColor = selectedColor; 
+});
 eraserBtn.addEventListener("click", ()=>{
     activeColor = "transparent";
-})
+});
 clearBtn.addEventListener("click", ()=>{
     createGrid(activeSize)
 });
@@ -38,7 +44,7 @@ function createGrid(size) {
         let panel = document.createElement("div");
         panel.classList.add("panels");
         panel.addEventListener("mouseover", color);
-        panel.addEventListener("mousedown", color)
+        panel.addEventListener("mousedown", color);
         sketchGrid.appendChild(panel);
     }
 }
@@ -53,6 +59,7 @@ function color(e){
         return;
     }
 }
+
 
 createGrid(DEFAULTSIZE);
 

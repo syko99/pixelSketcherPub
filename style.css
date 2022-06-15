@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: rgb(61, 60, 66);
+    background-color: rgb(51, 49, 58);
     width: 100%;
     height: 100%;
     font-family: var(--default-font);
@@ -17,11 +17,14 @@ header h1{
     font-weight: 800;
     color: var(--default-color);
     text-align: center;
+    user-select: none;
 }
 .main__wrapper{
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
+    width: 80%;
+    margin: auto;
 }
 .options{
     width: 50%;
@@ -59,13 +62,13 @@ header h1{
     width: 8rem;
     height: 8rem;
     background-color: transparent;
+    cursor: pointer;
 }
 #gridSizeLabel{
     font-weight: 600;
     font-size: 1.5rem;
     color: var(--default-color);
-}
-#gridSize{
+    user-select: none;
 }
 .sketch__grid{
     display: grid;
