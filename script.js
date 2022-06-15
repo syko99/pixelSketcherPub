@@ -23,9 +23,11 @@ colorPicker.addEventListener("input", (e)=>{
 });
 penBtn.addEventListener("click", (e)=>{
     activeColor = selectedColor; 
+    activatePen(penBtn);
 });
 eraserBtn.addEventListener("click", ()=>{
     activeColor = "transparent";
+    activatePen(eraserBtn);
 });
 clearBtn.addEventListener("click", ()=>{
     activeColor = selectedColor;
@@ -50,6 +52,7 @@ function createGrid(size) {
         panel.addEventListener("mousedown", color);
         sketchGrid.appendChild(panel);
     }
+    activatePen(penBtn);
 }
 
 function color(e){
@@ -61,6 +64,15 @@ function color(e){
     }else{
         return;
     }
+}
+
+function activatePen(btn){
+    document.querySelectorAll(".options__button").forEach(button => {
+        button.style.backgroundColor = "transparent";
+        button.style.color = "whitesmoke";
+    });
+    btn.style.backgroundColor = "whitesmoke";
+    btn.style.color = "black";
 }
 
 
