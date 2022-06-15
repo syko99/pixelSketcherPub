@@ -28,7 +28,10 @@ eraserBtn.addEventListener("click", ()=>{
     activeColor = "transparent";
 });
 clearBtn.addEventListener("click", ()=>{
-    createGrid(activeSize)
+    activeColor = selectedColor;
+    if (confirm("Are you sure you would like to clear the board?")){
+        createGrid(activeSize);
+    };
 });
 
 gridSize.onchange = (e) => {

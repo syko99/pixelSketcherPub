@@ -38,6 +38,7 @@ header h1{
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    text-align: center;
 }
 .options__button{
     width: 10rem;
